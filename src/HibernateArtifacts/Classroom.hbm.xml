@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="Hibernate"
+           name="Classroom" table="Class">
+        <id name="maLop" type="string">
+            <column length="4" name="maLop"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="tenLop" type="string">
+            <column length="10" name="tenLop"/>
+        </property>
+        <property name="tongSo" type="int">
+            <column length="10" name="tongSo"/>
+        </property>
+        <property name="soNam" type="int">
+            <column name="soNam"/>
+        </property>
+        <property name="soNu" type="int">
+            <column name="soNu"/>
+        </property>
+    </class>
+</hibernate-mapping>

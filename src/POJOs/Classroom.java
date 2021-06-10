@@ -1,20 +1,36 @@
 package POJOs;
 
-import java.util.Date;
 
-public class Class implements java.io.Serializable {
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "Class")
+public class Classroom implements java.io.Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "maLop")
     private String maLop;
+
+    @Column(name = "tenLop")
     private String tenLop;
+
+    @Column(name = "tongSo")
     private int tongSo;
+
+    @Column(name = "soNam")
     private int soNam;
+
+    @Column(name = "soNu")
     private int soNu;
 
-    public Class() {
+    public Classroom() {
     }
-    public Class(String maLop) {
+    public Classroom(String maLop) {
         this.maLop = maLop;
     }
-    public Class(String maLop, String tenLop, int tongSo, int soNam, int soNu) {
+    public Classroom(String maLop, String tenLop, int tongSo, int soNam, int soNu) {
         this.maLop = maLop;
         this.tenLop = tenLop;
         this.tongSo = tongSo;
