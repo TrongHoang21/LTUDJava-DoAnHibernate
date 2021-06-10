@@ -13,6 +13,6 @@
 
         <!--Mapping Resources-->
         <mapping resource="HibernateArtifacts/SinhVienAccount.hbm.xml"/>
-        <mapping resource="Classroom.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/Classroom.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
