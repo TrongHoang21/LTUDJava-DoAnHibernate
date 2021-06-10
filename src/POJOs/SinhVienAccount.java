@@ -30,9 +30,9 @@ public class SinhVienAccount implements java.io.Serializable {
         return this.hoTen;
     } public void setHoTen(String hoTen) {
         this.hoTen = hoTen;
-    } public String getID() {
+    } public String getMaSo() {
         return this.maSo;
-    } public void setID(String maSo) {
+    } public void setMaSo(String maSo) {
         this.maSo = maSo;
     } public String getMaLop() {
         return this.maLop;

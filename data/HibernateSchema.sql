@@ -10,13 +10,13 @@ create table Class(
 );
 
 create table GiaoVuAccount(
-	iD Varchar(4) PRIMARY KEY,
+	maSo Varchar(4) PRIMARY KEY,
     userame varchar(10),
     pass varchar(10)
 );
 
 create table SinhVienAccount(
-	iD varchar(4) PRIMARY KEY,
+	maSo varchar(4) PRIMARY KEY,
     username varchar(10),
     pass varchar(10),
     hoTen varchar(10),
@@ -68,6 +68,7 @@ create table RegistLog(
     FOREIGN KEY RegistLog(maSinhVien) REFERENCES SinhVienAccount(maSinhVien),
     FOREIGN KEY RegistLog(maCourse) REFERENCES Course(maCourse)
 );
+
 
 
 
