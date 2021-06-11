@@ -2,8 +2,10 @@ package HibernateProject;
 import java.util.*;
 
 import DAO.ClassroomDAO;
+import DAO.CourseDAO;
 import DAO.SinhVienAccountDAO;
 import POJOs.Classroom;
+import POJOs.Course;
 import POJOs.SinhVienAccount;
 
 public class main {
@@ -42,18 +44,18 @@ public class main {
 //            }
 //        }
 
-        boolean kq = SinhVienAccountDAO.deleteSinhVien("1008");
-        if (kq == true) {
-            System.out.println("Xóa thành công");
-        } else {
-            System.out.println("Xóa thất bại");
-        }
+//        boolean kq = SinhVienAccountDAO.deleteSinhVien("1008");
+//        if (kq == true) {
+//            System.out.println("Xóa thành công");
+//        } else {
+//            System.out.println("Xóa thất bại");
+//        }
 
-        List<SinhVienAccount> ds= SinhVienAccountDAO.showListSinhVien();
+        List<Course> ds= CourseDAO.showListCourse();
         for(int i=0; i<ds.size(); i++){
-            SinhVienAccount sv=ds.get(i);
-            System.out.println("MSSV: "+sv.getMaSinhVien());
-            System.out.println("Họ và tên: "+sv.getHoTen());
+            Course sv=ds.get(i);
+            System.out.println("MSSV: "+sv.getMaCourse());
+            System.out.println("Họ và tên: "+sv.getGiaoVienLiThuyet());
         }
 
     }
