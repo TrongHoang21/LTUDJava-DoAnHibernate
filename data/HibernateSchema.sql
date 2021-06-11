@@ -20,7 +20,7 @@ create table SinhVienAccount(
     username varchar(10),
     pass varchar(10),
     hoTen varchar(20),
-    maSinhVien varchar(4) UNIQUE,
+    maSinhVien varchar(4) unique,
     maLop varchar(4),
     FOREIGN KEY SinhVienAccount(maLop) REFERENCES Class(maLop)
 );
@@ -102,3 +102,6 @@ insert into Course values ("cs03", "sj03", "Duc Thinh", "G103", 4, 1, 50);
 insert into RegistLog values ("1001", "cs01", "2020-01-01");
 insert into RegistLog values ("1002", "cs02", "2020-04-01");
 insert into RegistLog values ("1003", "cs03", "2020-07-01");
+
+
+# drop database Hibernate

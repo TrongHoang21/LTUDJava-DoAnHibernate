@@ -36,6 +36,10 @@ public class Course implements java.io.Serializable {
         return this.maMonHoc;
     } public void setMaMonHoc(String maMonHoc) {
         this.maMonHoc = maMonHoc;
+    } public String getTenPhongHoc() {
+        return this.tenPhongHoc;
+    } public void setTenPhongHoc(String tenPhongHoc) {
+        this.tenPhongHoc = tenPhongHoc;
     } public String getGiaoVienLiThuyet() {
         return this.giaoVienLiThuyet;
     } public void setGiaoVienLiThuyet(String giaoVienLiThuyet) {
