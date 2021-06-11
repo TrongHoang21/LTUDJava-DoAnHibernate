@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="Hibernate"
+           name="POJOs.Course" table="Course">
+        <id name="maCourse" type="string">
+            <column length="4" name="maCourse"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="maMonHoc" type="string">
+            <column length="4" name="maMonHoc"/>
+        </property>
+        <property name="giaoVienLiThuyet" type="string">
+            <column length="20" name="giaoVienLiThuyet"/>
+        </property>
+        <property name="tenPhongHoc" type="string">
+            <column length="10" name="tenPhongHoc"/>
+        </property>
+        <property name="ngayHoc" type="int">
+            <column name="ngayHoc"/>
+        </property>
+        <property name="caHoc" type="int">
+            <column name="caHoc"/>
+        </property>
+        <property name="soSlotToiDa" type="int">
+            <column name="soSlotToiDa"/>
+        </property>
+    </class>
+</hibernate-mapping>
