@@ -14,5 +14,11 @@
         <!--Mapping Resources-->
         <mapping resource="HibernateArtifacts/SinhVienAccount.hbm.xml"/>
         <mapping resource="HibernateArtifacts/Classroom.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/GiaoVuAccount.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/Subject.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/Course.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/RegistLog.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/RegistSession.hbm.xml"/>
+        <mapping resource="HibernateArtifacts/Semester.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

@@ -4,10 +4,14 @@
 <hibernate-mapping>
     <class catalog="Hibernate"
            name="POJOs.SinhVienAccount" table="SinhVienAccount">
-        <id name="maSo" type="string">
-            <column length="4" name="maSo"/>
+        <id name="maSinhVien" type="string">
+            <column length="4" name="maSinhVien"/>
             <generator class="assigned"/>
         </id>
+        <property name="maSo" type="string">
+            <column length="4" name="maSo"/>
+            <!--generator class="identity"/-->
+        </property>
         <property name="userName" type="string">
             <column length="10" name="username"/>
         </property>
@@ -16,9 +20,6 @@
         </property>
         <property name="hoTen" type="string">
             <column length="10" name="hoTen"/>
-        </property>
-        <property name="maSinhVien" type="string">
-            <column length="4" name="maSinhVien"/>
         </property>
         <property name="maLop" type="string">
             <column length="4" name="maLop"/>
