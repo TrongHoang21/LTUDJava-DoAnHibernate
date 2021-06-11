@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="Hibernate"
+           name="POJOs.RegistLog" table="RegistLog">
+        <id name="maSinhVien" type="string">
+            <column length="4" name="maSinhVien"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="maCourse" type="string">
+            <column length="4" name="maCourse"/>
+        </property>
+        <property name="ngayDangKi" type="date">
+            <column name="ngayDangKi"/>
+        </property>
+    </class>
+</hibernate-mapping>

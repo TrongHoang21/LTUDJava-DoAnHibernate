@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="Hibernate"
+           name="POJOs.Semester" table="Semester">
+        <id name="maHocKi" type="string">
+            <column length="4" name="maHocKi"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="tenHocKi" type="string">
+            <column length="10" name="tenHocKi"/>
+        </property>
+        <property name="namHoc" type="int">
+            <column name="namHoc"/>
+        </property>
+        <property name="ngayBatDau" type="date">
+            <column name="ngayBatDau"/>
+        </property>
+        <property name="ngayKetThuc" type="date">
+            <column name="ngayKetThuc"/>
+        </property>
+    </class>
+</hibernate-mapping>
