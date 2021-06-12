@@ -11,7 +11,7 @@ create table Class(
 
 create table GiaoVuAccount(
 	maSo Varchar(4) PRIMARY KEY,
-    userame varchar(10),
+    username varchar(10),
     pass varchar(10)
 );
 

@@ -7,8 +7,12 @@ import DAO.SinhVienAccountDAO;
 import POJOs.Classroom;
 import POJOs.Course;
 import POJOs.SinhVienAccount;
+import GUI.Login_Form;
 
 public class main {
+
+    public static Login_Form f;
+
     public static void main(String[] args) {
 
 
@@ -51,12 +55,13 @@ public class main {
 //            System.out.println("Xóa thất bại");
 //        }
 
-        List<Course> ds= CourseDAO.showListCourse();
-        for(int i=0; i<ds.size(); i++){
-            Course sv=ds.get(i);
-            System.out.println("MSSV: "+sv.getMaCourse());
-            System.out.println("Họ và tên: "+sv.getGiaoVienLiThuyet());
-        }
+//        List<Course> ds= CourseDAO.showListCourse();
+//        for(int i=0; i<ds.size(); i++){
+//            Course sv=ds.get(i);
+//            System.out.println("MSSV: "+sv.getMaCourse());
+//            System.out.println("Họ và tên: "+sv.getGiaoVienLiThuyet());
+//        }
 
+        f = new GUI.Login_Form();
     }
 }
