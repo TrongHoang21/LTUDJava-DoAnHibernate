@@ -33,7 +33,7 @@ public class Login_Form {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //int res = CheckLogin();
+                int res = CheckLogin();
                 showByMode(1);
             }
         });
@@ -42,8 +42,8 @@ public class Login_Form {
         Runnable preloadData = new Runnable() {
             @Override
             public void run() {
-                //main.l_GiaoVu = GiaoVuAccountDAO.showListGiaoVu();
-                //main.l_SinhVien = SinhVienAccountDAO.showListSinhVien();
+                main.l_GiaoVu = GiaoVuAccountDAO.showListGiaoVu();
+                main.l_SinhVien = SinhVienAccountDAO.showListSinhVien();
                 loginButton.setEnabled(true);
             }
         };
