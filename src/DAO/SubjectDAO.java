@@ -1,7 +1,7 @@
 package DAO;
 
 import HibernateArtifacts.HibernateUtil;
-import POJOs.Classroom;
+import POJOs.Subject;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -9,13 +9,12 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
-public class ClassroomDAO {
-
-    public static List<Classroom> showListClassroom() {
-        List<Classroom> ds = null;
+public class SubjectDAO {
+    public static List<Subject> showListSubject() {
+        List<Subject> ds = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            String hql = "from Classroom";
+            String hql = "from Subject";
             Query query = session.createQuery(hql);
             ds = query.list();
         } catch (HibernateException ex) {
@@ -27,11 +26,11 @@ public class ClassroomDAO {
         return ds;
     }
 
-    public static Classroom searchClassroom(String maSo) {
-        Classroom sv = null;
+    public static Subject searchSubject(String maSo) {
+        Subject sv = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
-            sv = (Classroom) session.get(Classroom.class, maSo);
+            sv = (Subject) session.get(Subject.class, maSo);
         } catch (HibernateException ex) {
             //Log the exception
             System.err.println(ex);
@@ -41,9 +40,9 @@ public class ClassroomDAO {
         return sv;
     }
 
-    public static boolean addClassroom(Classroom sv) {
+    public static boolean addSubject(Subject sv) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if (ClassroomDAO.searchClassroom(sv.getMaLop())!=null) {
+        if (SubjectDAO.searchSubject(sv.getMaMonHoc())!=null) {
             return false;
         }
         Transaction transaction = null;
@@ -62,9 +61,9 @@ public class ClassroomDAO {
         return true;
     }
 
-    public static boolean updateClassroom(Classroom sv) {
+    public static boolean updateSubject(Subject sv) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        if (ClassroomDAO.searchClassroom(sv.getMaLop()) == null) {
+        if (SubjectDAO.searchSubject(sv.getMaMonHoc()) == null) {
             return false;
         }
         Transaction transaction = null;
@@ -82,9 +81,9 @@ public class ClassroomDAO {
         return true;
     }
 
-    public static boolean deleteClassroom(String maLop) {
+    public static boolean deleteClassroom(String maMonHoc) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Classroom sv = ClassroomDAO.searchClassroom(maLop);
+        Subject sv = SubjectDAO.searchSubject(maMonHoc);
         if(sv==null){
             return false;
         }

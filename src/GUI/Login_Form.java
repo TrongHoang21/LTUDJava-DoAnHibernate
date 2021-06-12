@@ -2,14 +2,12 @@ package GUI;
 
 import DAO.GiaoVuAccountDAO;
 import DAO.SinhVienAccountDAO;
-import POJOs.GiaoVuAccount;
-import POJOs.SinhVienAccount;
+import HibernateProject.main;
 
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 
 public class Login_Form {
@@ -18,8 +16,7 @@ public class Login_Form {
     private JTextField textField1;
     private JPasswordField passwordField1;
     private final JFrame frame;
-    List<GiaoVuAccount> l1;
-    List<SinhVienAccount> l2;
+
     public Login_Form()
     {
         frame = new JFrame();
@@ -36,8 +33,8 @@ public class Login_Form {
         loginButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int res = CheckLogin();
-                showByMode(res);
+                //int res = CheckLogin();
+                showByMode(1);
             }
         });
 
@@ -45,8 +42,8 @@ public class Login_Form {
         Runnable preloadData = new Runnable() {
             @Override
             public void run() {
-                l1 = GiaoVuAccountDAO.showListGiaoVu();
-                l2 = SinhVienAccountDAO.showListSinhVien();
+                //main.l_GiaoVu = GiaoVuAccountDAO.showListGiaoVu();
+                //main.l_SinhVien = SinhVienAccountDAO.showListSinhVien();
                 loginButton.setEnabled(true);
             }
         };
@@ -62,18 +59,22 @@ public class Login_Form {
         if(textField1 == null || passwordField1 == null)
             return 0;
 
-        for(int i=0; i<l1.size(); i++){
-            String name = l1.get(i).getUserName();
-            String pass = l1.get(i).getPassWord();
+        for(int i=0; i<main.l_GiaoVu.size(); i++){
+            String name = main.l_GiaoVu.get(i).getUserName();
+            String pass = main.l_GiaoVu.get(i).getPassWord();
             if(name.equals(textField1.getText()) && pass.equals(new String(passwordField1.getPassword()))){
+                main.currentUser = name;
+                main.currentMode = 1;
                 return 1;
             }
         }
 
-        for(int i=0; i<l2.size(); i++){
-            String name = l2.get(i).getUserName();
-            String pass = l2.get(i).getPassWord();
+        for(int i = 0; i<main.l_SinhVien.size(); i++){
+            String name = main.l_SinhVien.get(i).getUserName();
+            String pass = main.l_SinhVien.get(i).getPassWord();
             if(name.equals(textField1.getText()) && pass.equals(new String(passwordField1.getPassword()))){
+                main.currentUser = name;
+                main.currentMode = 2;
                 return 2;
             }
         }
