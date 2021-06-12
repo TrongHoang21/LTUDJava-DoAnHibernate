@@ -34,7 +34,7 @@ public class Login_Form {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int res = CheckLogin();
-                showByMode(1);
+                showByMode(res);
             }
         });
 
